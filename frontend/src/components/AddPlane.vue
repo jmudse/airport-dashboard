@@ -1,7 +1,6 @@
 <template>
-  <div class="container">
     <div class="row">
-        <div class="col-md-7 mrgnbtm">
+        <div class="col-md-7 mb-5 p-0">
         <h2>Add Plane</h2>
             <form>
                 <div class="row">
@@ -22,10 +21,9 @@
                         <input type="text" class="form-control" v-model="status" name="status" id="status" />
                     </div>
                 </div>
-                <button type="button" @click='addPlane()' class="btn btn-danger">Create</button>
+                <button type="button" @click='addPlane()' class="btn btn-primary">Create</button>
             </form>
         </div>
-    </div>
     </div>
 </template>
 

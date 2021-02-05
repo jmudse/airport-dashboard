@@ -49,17 +49,32 @@ module.exports = {
      * @async
      * @return {Array}
      */
-    updatePlaneStatus() {
+    updatePlaneStatus(database, status) {
     // Implement update logic here
-        return false
+        return new Promise((resolve, reject) => {
+            _cloudant.postData(
+                database,
+                status
+            ).then(result => {
+                resolve(result);
+            }).catch(err => reject(err));
+        });
     },
     /**
      * @method deletePlaneStatus
      * @async
      * @return {Array}
      */
-    deletePlaneStatus() {
+    deletePlaneStatus(database, status) {
     // Implement delete logic here
-        return false
+        return new Promise((resolve, reject) => {
+            _cloudant.deleteData(
+                database,
+                status._id,
+                status._rev
+            ).then(result => {
+                resolve(result);
+            }).catch(err => reject(err));
+        });
     }
 };
